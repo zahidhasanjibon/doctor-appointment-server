@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Teeth Cleaning",
+    "img": "https://i.postimg.cc/W3WyHRRD/young-man-with-patient-bib-dental-chair-dentist-who-sits-him-he-looks-his-teeth-using-dental-microsc.jpg",
+    "price": 490,
+    "rating": 5,
+    "desc": "You should visit the dentist every six months for teeth cleanings. Tartar is a hard buildup of plaque that forms on the teeth."
+  },
+  {
+    "name": "Root Canal Therapy",
+    "img": "https://i.postimg.cc/T12DhShc/little-beautiful-girl-dentist-smiling.jpg",
+    "price": 790,
+    "rating": 4,
+    "desc": "In the past, diseased teeth often had to be extracted. Today, they often can be saved through root canal therapy. A root canal is a dental procedure that is used to repair teeth that are infected or badly decayed."
+  },
+  {
+    "name": "Tooth Extractions",
+    "img": "https://i.postimg.cc/pXG6VMyq/woman-patient-dentist.jpg",
+    "price": 630,
+    "rating": 5,
+    "desc": "A tooth extraction, or dental extraction, is the removal of a tooth from its socket in the bone. There are a number of reasons why tooth removal may be necessary. An extraction may be necessary"
+  },
+  {
+    "name": "Teeth Whitening",
+    "img": "https://i.postimg.cc/SNFWWZ3k/beautiful-girl-sitting-dentist-s-office.jpg",
+    "price": 330,
+    "rating": 4,
+    "desc": "Want a whiter smile? Your main options are at-home and in-office bleaching. At-home teeth whitening involves custom-made dental trays filled with hydrogen peroxide gel that you can use at home"
+  },
+  {
+    "name": "Dental Implants",
+    "img": "https://i.postimg.cc/RCfP5nzC/empty-modern-teethcare-stomatology-hospital-office-with-nobody-it-equipped-with-dental-intruments-re.jpg",
+    "price": 930,
+    "rating": 5,
+    "desc": "Dental bonding is a technique used to correct imperfections with your teeth to give you a better-looking smile. Bonding is used to repair chipped teeth, decayed teeth, and cracked teeth"
+  },
+  {
+    "name": "Dental Crowns",
+    "img": "https://i.postimg.cc/cLY1fhqy/happy-young-redhead-woman-sitting-dentist-chair-holding-toothbrush-denture-dentist-office.jpg",
+    "price": 230,
+    "rating": 5,
+    "desc": "A dental crown is a dental prosthesis which replaces the visible part of a tooth. A dental crown functions to strengthen teeth, restore their original shape, and improve their appearance"
+  }
+]
