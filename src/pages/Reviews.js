@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { SpinnerCircular } from "spinners-react";
 import { authContext } from '../component/authentication/AuthContext';
 import UseTitle from '../component/hook/useTitle';
@@ -14,6 +15,7 @@ export default function Reviews() {
     const [updateReviewData,setUpdateReviewData] = useState({})
     const [reviewMsgsg,setReviewMsg] = useState("")
     const [isLoading,setIsLoading] = useState(true)
+    const navigate = useNavigate()
 
 
   const {user,logOut} = useContext(authContext)
@@ -38,6 +40,13 @@ export default function Reviews() {
           if(res.status === 401 || res.status === 403){
             toast.error('unauthorized access')
             logOut()
+            .then(() => {
+              localStorage.removeItem("jwttoken");
+              navigate("/login");
+            })
+            .catch((err) => {
+              console.log(err);
+            });
             return
           }
           return res.json()

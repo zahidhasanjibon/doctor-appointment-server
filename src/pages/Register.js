@@ -6,7 +6,7 @@ import { authContext } from "../component/authentication/AuthContext";
 export default function Register() {
   // const [imgPreview, setImgPreview] = useState("");
 
-  const { signUp, updateProfileNameImg,isLoading } = useContext(authContext);
+  const { signUp, updateProfileNameImg,isLoading ,setIsLoading} = useContext(authContext);
   const navigate = useNavigate();
 
 
@@ -40,20 +40,41 @@ export default function Register() {
                 .then((res) => res.json())
                 .then((d) => {
                   localStorage.setItem("jwttoken", d.token);
+                  userSaveToDb(email,name)
                 });
-              navigate("/");
+             
             })
             .catch((err) => {
-        
+
               toast.error(err.message);
             });
         
       })
       .catch((err) => {
         toast.error(err.message);
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+    
       
-      });
   };
+
+    const userSaveToDb = (email,name) => {
+          fetch(`${process.env.REACT_APP_API_URL2}/user`,{
+            method:"POST",
+            headers:{
+              "content-type":"application/json"
+            },
+            body:JSON.stringify({userEmail:email,
+            userName:name})
+          })
+          .then(res => res.json())
+          .then(data => {
+            navigate("/");
+          })
+          .catch(er => toast.error(er))
+    }
 
   return (
     <div className="container mx-auto">

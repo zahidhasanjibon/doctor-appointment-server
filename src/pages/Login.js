@@ -43,7 +43,6 @@ export default function Login() {
           .then((res) => res.json())
           .then((d) => {
             localStorage.setItem("jwttoken", d.token);
-
             navigate(from, { replace: true });
           });
       })
@@ -75,8 +74,8 @@ export default function Login() {
           .then((res) => res.json())
           .then((d) => {
             localStorage.setItem("jwttoken", d.token);
-
-            navigate(from, { replace: true });
+            userSaveToDb(data?.user?.email,data?.user?.displayName || 'not available')
+            
           });
       })
       .catch((err) => {
@@ -104,8 +103,7 @@ export default function Login() {
           .then((res) => res.json())
           .then((d) => {
             localStorage.setItem("jwttoken", d.token);
-
-            navigate(from, { replace: true });
+            userSaveToDb(data?.user?.email,data?.user?.displayName || 'not available')
           });
       })
       .catch((err) => {
@@ -116,6 +114,24 @@ export default function Login() {
         setIsLoading(false);
       });
   };
+
+  const userSaveToDb = (email,name) => {
+    fetch(`${process.env.REACT_APP_API_URL2}/user`,{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify({userEmail:email,
+      userName:name})
+    })
+    .then(res => res.json())
+    .then(data => {
+      navigate(from, { replace: true });
+      
+    })
+    .catch(er => toast.error(er))
+}
+
 
   UseTitle('Log In')
 

@@ -19,6 +19,7 @@ export default function Navbar() {
 
   const { user, isLoading, logOut } = useContext(authContext);
 
+
   const { pathname } = useLocation();
   const match = useMatch(pathname.slice(1));
   useEffect(() => {
@@ -128,22 +129,12 @@ export default function Navbar() {
                 )
               )
             }
-             {
-              user?.uid && ( <li onClick={() => handleActiveMenu("addservice")}>
-              <Link
-                to="/addservice"
-                className={`${activeMenu === "addservice" ? "active" : undefined}`}
-              >
-                Add Service
-              </Link>
-            </li>)
-             }
-              <li onClick={() => handleActiveMenu("blog")}>
+              <li onClick={() => handleActiveMenu("dashboard")}>
                 <Link
-                  to="/blog"
-                  className={`${activeMenu === "blog" ? "active" : undefined}`}
+                  to="/dashboard"
+                  className={`${activeMenu === "dashboard" ? "active" : undefined}`}
                 >
-                  Blog
+                  Dashboard 
                 </Link>
               </li>
             </ul>
