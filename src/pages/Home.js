@@ -1,6 +1,7 @@
 // Import Swiper styles
 import { FaTooth } from "react-icons/fa";
 import { GiTooth } from "react-icons/gi";
+import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -42,9 +43,9 @@ export default function Home() {
                       fractured teeth. Dentists diagnose and treat problems with
                       patients' teeth, gums, and related parts of the mouth.
                     </p>
-                    <button className="btn-grad">
+                    <Link to="/appointment" className=" btn btn-secondary btn-grad">
                       Make an appoinment
-                    </button>
+                    </Link>
                   </div>
                   <div className=" md:w-1/2">
                     <img src={doctImg} alt="" />
@@ -64,9 +65,9 @@ export default function Home() {
                       fractured teeth. Dentists diagnose and treat problems with
                       patients' teeth, gums, and related parts of the mouth.
                     </p>
-                    <button className="btn btn-secondary">
+                    <Link to="/appointment" className="btn btn-secondary">
                       Make an appoinment{" "}
-                    </button>
+                    </Link>
                   </div>
                   <div className="w-1/2">
                     <img src={doct4Img} alt="" />
@@ -86,9 +87,9 @@ export default function Home() {
                       fractured teeth. Dentists diagnose and treat problems with
                       patients' teeth, gums, and related parts of the mouth.
                     </p>
-                    <button className="btn btn-secondary">
+                    <Link to="/appointment" className="btn btn-secondary">
                       Make an appoinment{" "}
-                    </button>
+                    </Link>
                   </div>
                   <div className="w-1/2">
                     <img src={doct3img} alt="" />

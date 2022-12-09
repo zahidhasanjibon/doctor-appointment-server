@@ -3,7 +3,7 @@ import { AiOutlineCalendar, AiOutlinePhone } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 export default function ContactSection() {
   return (
-    <section className="pt-14">
+    <section className="pt-14 pb-12">
       <div className="w-4/5 mx-auto">
         <div className="contact-wrapper flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-1/2 pt-12">
@@ -13,7 +13,7 @@ export default function ContactSection() {
             <div className="mt-12">
               <div className="flex items-center">
                 <span>
-                  <GoLocation />
+                  <GoLocation size={26} color="red"/>
                 </span>
                 <div className="pl-4">
                   <h4 className="font-bold">Our Address</h4>
@@ -22,7 +22,7 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center py-6">
                 <span>
-                  <AiOutlinePhone />
+                  <AiOutlinePhone size={26} color="blue"/>
                 </span>
                 <div className="pl-4">
                   <h4 className="font-bold">Phone</h4>
@@ -32,7 +32,7 @@ export default function ContactSection() {
 
               <div className="flex items-center">
                 <span>
-                  <AiOutlineCalendar />
+                  <AiOutlineCalendar size={26} color="orange"/>
                 </span>
                 <div className="pl-4">
                   <h4 className="font-bold">Open Hours</h4>

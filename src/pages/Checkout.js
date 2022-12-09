@@ -1,18 +1,17 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+// import { useNavigate } from "react-router-dom";
 
 export default function Checkout({ booking }) {
   const [stripeError, setStripeError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  const [TransactionId, setTransactionId] = useState("");
   const [processingCard, setCardProcessing] = useState(false);
+  // const navigate = useNavigate()
 
   const stripe = useStripe();
   const elements = useElements();
 
-  const { price,patientName,patientEmail } = booking;
+  const { price,patientName,patientEmail,_id } = booking;
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL2}/create-payment-intent`, {
@@ -80,8 +79,20 @@ export default function Checkout({ booking }) {
       }
      
       if(paymentIntent.status === 'succeeded'){
-        toast.success("payment successfull")
-        setTransactionId(paymentIntent.id)
+
+        fetch(`http://localhost:5000/payment/${_id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `bearer ${localStorage.getItem("jwttoken")}`,
+          }
+        })
+        .then(res => res.json())
+        .then((d) => {
+          console.log(d);
+        })
+        // toast.success("payment successfull")
+        // navigate("/dashboard")
 
           
             // fetch for update

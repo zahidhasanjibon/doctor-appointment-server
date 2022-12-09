@@ -15,16 +15,16 @@ export default function AboutSection() {
         </div>
 
         <div className="w-full md:w-1/2 pl-8">
-          <h3 className="text-xl mb-4">
+          <h3 className="text-xl mb-8">
             Our focus is on your overall well being and helping you achieve
             optimal health and esthetics. We provide state-of-the-art dental
             care in a comfortable.
           </h3>
 
           <div>
-            <div className="flex">
+            <div className="flex items-center">
               <span>
-                <GrMoney color="red" />
+                <GrMoney color="blue" size={30} />
               </span>
 
               <div className="pl-4 items-center">
@@ -35,7 +35,7 @@ export default function AboutSection() {
 
             <div className="flex items-center mt-4">
               <span>
-                <SiPhotobucket />
+                <SiPhotobucket color="red" size={30}/>
               </span>
               <div className="pl-4 mb-4">
                 <h4 className="font-bold">Professionals in our Clinic</h4>
@@ -43,7 +43,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <button className="btn btn-secondary">More about Me </button>
+            <button className="btn btn-secondary mt-4">More about Me </button>
           </div>
         </div>
       </div>

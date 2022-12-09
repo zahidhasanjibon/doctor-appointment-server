@@ -32,7 +32,7 @@ export default function ServicesSection() {
         </div>
 
         <div className="text-center mt-12">
-          <NavLink to="/services" className="btn btn-secondary">
+          <NavLink to="/services" className="btn btn-secondary btn-sm">
         See all
 
           </NavLink>

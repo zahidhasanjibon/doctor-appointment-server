@@ -9,7 +9,7 @@ export default function ServiceCard({serviceInfo}) {
     const {title,img,rating,price,desc,_id} = serviceInfo || {}
 
   return (
-    <div className="service text-center">
+    <div className="service text-center shadow-lg py-4">
     <div className="inline-block">
       <PhotoProvider>
         <PhotoView src={img}>

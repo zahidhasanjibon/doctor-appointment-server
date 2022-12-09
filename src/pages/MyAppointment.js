@@ -70,11 +70,11 @@ export default function MyAppointment() {
                     <td>{booking.price} $</td>
                     <td>{booking.appointMentDate}</td>
                     <td>{booking.appointmentTime}</td>
-                    {!booking.paid ? <td>
+                    {!booking?.paymentStatus ? <td>
                       <Link to={`/dashboard/payment/${booking._id}`} className="btn btn-sm btn-primary">Pay</Link>
                     </td> : (
                       <td>
-                      <span className="font-bold text-blue-600">Paid</span></td>
+                      <span className=" text-white border p-1 bg-blue-300 rounded ">Paid</span></td>
                     )   
                     
                     }
